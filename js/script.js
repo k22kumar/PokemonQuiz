@@ -47,7 +47,7 @@ const pokeTypeApp = { //namespace object
     $pokemon: $('#pokemon'),
 
     //variables to keep track of quiz mode
-    numberOfquestions: 10,
+    numberOfquestions: 7,
     quizMode: false,
     quizCounter: 0,
     score: 0,
@@ -73,7 +73,6 @@ pokeTypeApp.init = function () { // parse pokeType methods
 pokeTypeApp.chooseType = function () {
     //jquery shorthand for button element
     const $btn = $('button');
-
     $btn.on('click', function () {
         // first remove any supereffective/resistances classes each time a user selets a new button
         pokeTypeApp.reset();
@@ -499,7 +498,7 @@ pokeTypeApp.giveFeedBack = function (theTypeIndex) {
                     if (i == (pokeTypeApp.answerKey.length - 1)) {
                         correctAnswer += " or " + pokeTypeApp.convertIndexToJtype(pokeTypeApp.answerKey[i], "str");
                     } else {
-                        correctAnswer += " " + pokeTypeApp.convertIndexToJtype(pokeTypeApp.answerKey[i], "str");
+                        correctAnswer += " " + pokeTypeApp.convertIndexToJtype(pokeTypeApp.answerKey[i], "str")  ;
                     }
                 }
             }
