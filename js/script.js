@@ -47,7 +47,7 @@ const pokeTypeApp = { //namespace object
     $pokemon: $('#pokemon'),
 
     //variables to keep track of quiz mode
-    numberOfquestions: 7,
+    numberOfquestions: 10,
     quizMode: false,
     quizCounter: 0,
     score: 0,
@@ -359,7 +359,7 @@ pokeTypeApp.showMatchUp = function (typeIndex, matchUp) {
 pokeTypeApp.askQuestion = function () {
     if (pokeTypeApp.quizMode == true) {
 
-        let questionType = Math.floor((Math.random() * 2.9));
+        let questionType = Math.floor((Math.random() * 4));
         switch (questionType) {
             case 0:
                 pokeTypeApp.askSuperQuestion();
@@ -368,6 +368,9 @@ pokeTypeApp.askQuestion = function () {
                 pokeTypeApp.askNotEffectiveQuestion();
                 break;
             case 2:
+                pokeTypeApp.askImmunityQuestion();
+                break;
+            case 3:
                 pokeTypeApp.askImmunityQuestion();
                 break;
         }
@@ -396,7 +399,7 @@ pokeTypeApp.askSuperQuestion = function () {
 pokeTypeApp.askNotEffectiveQuestion = function () {
     //only run if quiz mode is on some reason without this if it still runs
     if (pokeTypeApp.quizMode == true) {
-        let typeIndex = Math.floor(Math.random() * 17.9);
+        let typeIndex = Math.floor(Math.random() * 18);
 
         let type = pokeTypeApp.convertIndexToJtype(typeIndex, "str");
         let typeArray = pokeTypeApp.typeChart[typeIndex];
@@ -416,7 +419,7 @@ pokeTypeApp.askImmunityQuestion = function () {
     //only run if quiz mode is on some reason without this if it still runs
     if (pokeTypeApp.quizMode == true) {
         //There are only 8 types with immunities against other types (normal, ground, flying, ghost, dark, steel, and fairy)
-        let immunityRng = Math.floor(Math.random() * 6.9);
+        let immunityRng = Math.floor(Math.random() * 7);
         let typeIndex = 0;
 
         switch (immunityRng) {
@@ -445,7 +448,6 @@ pokeTypeApp.askImmunityQuestion = function () {
 
         let type = pokeTypeApp.convertIndexToJtype(typeIndex, "str");
         let typeArray = pokeTypeApp.typeChart[typeIndex];
-        let immunityValuesArray = [];
         for (let i = 0; i < 18; i++) {
             typeArray = pokeTypeApp.typeChart[i];
             if (typeArray[typeIndex] == 0) {
@@ -454,6 +456,18 @@ pokeTypeApp.askImmunityQuestion = function () {
         }
         pokeTypeApp.$title.text(`Question ${pokeTypeApp.quizCounter + 1}, What type does ${type} have an immunity against?`);
     }
+}
+
+pokeTypeApp.askSuperAgainstType = function () {
+    let typeIndex = Math.floor(Math.random() * 18);
+    let typeArray = pokeTypeApp.typeChart[typeIndex];
+    for (let i = 0; i < 18; i++) {
+        typeArray = pokeTypeApp.typeChart[i];
+        if (typeArray[typeIndex] == 2) {
+            pokeTypeApp.answerKey.push(i);
+        }
+    }
+    pokeTypeApp.$title.text(`Question ${pokeTypeApp.quizCounter + 1}, What type is supereffective against ${type}?`);
 }
 
 pokeTypeApp.checkAnswer = function (typeIndex) {
@@ -496,7 +510,7 @@ pokeTypeApp.giveFeedBack = function (theTypeIndex) {
 }
 
 pokeTypeApp.positiveFeedBack = function () { //function that gives a random positive response
-    let rng = Math.floor(Math.random() * 2.9);
+    let rng = Math.floor(Math.random() * 3);
     positiveLine = "";
     switch (rng) {
         case 0:
@@ -513,7 +527,7 @@ pokeTypeApp.positiveFeedBack = function () { //function that gives a random posi
 }
 
 pokeTypeApp.constructiveFeedBack = function () { //function that gives a random positive response
-    let rng = Math.floor(Math.random() * 2.9);
+    let rng = Math.floor(Math.random() * 3);
     constructiveLine = "";
     switch (rng) {
         case 0:
@@ -554,7 +568,7 @@ pokeTypeApp.gradeTrainer = function () {
 pokeTypeApp.changePokemon = function (typeIndex) {
     let type = typeIndex;
     let typeString = pokeTypeApp.convertIndexToJtype(type, "str");
-    let rng = Math.floor(Math.random() * 3.9);
+    let rng = Math.floor(Math.random() * 4);
     let source = "assets/" + typeString + "/" + rng + ".png";
     pokeTypeApp.$pokemon.attr('src', source);
 }
