@@ -415,7 +415,7 @@ pokeTypeApp.askNotEffectiveQuestion = function () {
 pokeTypeApp.askImmunityQuestion = function () {
     //only run if quiz mode is on some reason without this if it still runs
     if (pokeTypeApp.quizMode == true) {
-        //There are onl 8 types with immunities against other types (normal, ground, flying, ghost, dark, steel, and fairy)
+        //There are only 8 types with immunities against other types (normal, ground, flying, ghost, dark, steel, and fairy)
         let immunityRng = Math.floor(Math.random() * 6.9);
         let typeIndex = 0;
 
@@ -445,12 +445,14 @@ pokeTypeApp.askImmunityQuestion = function () {
 
         let type = pokeTypeApp.convertIndexToJtype(typeIndex, "str");
         let typeArray = pokeTypeApp.typeChart[typeIndex];
+        let immunityValuesArray = [];
         for (let i = 0; i < 18; i++) {
-            if (typeArray[i] == 0) {
+            typeArray = pokeTypeApp.typeChart[i];
+            if (typeArray[typeIndex] == 0) {
                 pokeTypeApp.answerKey.push(i);
             }
         }
-        pokeTypeApp.$title.text(`Question ${pokeTypeApp.quizCounter + 1}, What type has an immunity against ${type}?`);
+        pokeTypeApp.$title.text(`Question ${pokeTypeApp.quizCounter + 1}, What type does ${type} have an immunity against?`);
     }
 }
 
