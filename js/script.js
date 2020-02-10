@@ -359,7 +359,7 @@ pokeTypeApp.showMatchUp = function (typeIndex, matchUp) {
 pokeTypeApp.askQuestion = function () {
     if (pokeTypeApp.quizMode == true) {
 
-        let questionType = Math.floor((Math.random() * 3.9));
+        let questionType = Math.floor((Math.random() * 2.9));
         switch (questionType) {
             case 0:
                 pokeTypeApp.askSuperQuestion();
