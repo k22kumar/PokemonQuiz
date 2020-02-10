@@ -557,8 +557,12 @@ pokeTypeApp.changePokemon = function (typeIndex) {
     pokeTypeApp.$pokemon.attr('src', source);
 }
 
-$(document).ready(function () {
+pokeTypeApp.playMusic = function () {
+    $('#intro').get(0).play();
+}
 
+$(document).ready(function () {
+    pokeTypeApp.playMusic();
     pokeTypeApp.init();
 
 });
