@@ -1,0 +1,234 @@
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 62.5%;font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    min-width: 320px;}
+
+*, *:before, *:after {box-sizing: inherit}
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+/* generic styles */
+
+button {text-decoration: none;
+color: black;
+background-color: white;}
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    width: 100%;
+    overflow: hidden;
+    height: 20 vh;
+    align-items: center;
+}
+
+section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+}
+
+.allTypesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.typeContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.professorOak {
+    height: 250px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.titleimg-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 250px;
+}
+
+.pokemon-img {
+    margin: auto;
+}
+.pokemon-img img{
+    height: 140px;
+    width: auto;
+}
+
+.response {
+    font-size: 1.6rem;
+    margin: auto;
+}
+
+.immuneText {
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+
+.superEffectiveText {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgba(60,207,44,1);
+}
+
+.notEffectiveText {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgba(199, 10, 10);
+}
+
+.button {
+    margin: 15px;
+    padding: 15px 12px;
+    border: 4px solid black;
+    border-radius: 20px;
+    font-size: 1.75rem;
+    width: 120px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+/* button interactive styles */
+
+.button:hover,
+.button:focus {
+    color: white;
+}
+
+.superEffective {
+    box-shadow: 0px 0px 20px 10px rgba(60,207,44,1);
+}
+
+.notEffective {
+    box-shadow: 0px 0px 20px 10px rgba(199, 10, 10);
+}
+
+.immunity {
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0);
+}
+
+.quiz {
+    width: 120px;
+    height: 60px;
+}
+
+.quiz:hover,
+.quiz:focus {
+    background-color: black;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    color: grey;
+}
+
+.water:hover,
+.water:focus {
+    background-color: #3674f7;
+}
+
+.fire:hover,
+.fire:focus {
+    background-color: #f74a36;
+}
+
+.grass:hover,
+.grass:focus {
+    background-color: #36f767;
+}
+
+.bug:hover,
+.bug:focus {
+    background-color: #adf736;
+}
+
+.ice:hover,
+.ice:focus {
+    background-color: #36e1f7;
+}
+
+.ghost:hover,
+.ghost:focus {
+    background-color: #8436f7;
+}
+
+.psychic:hover,
+.psychic:focus {
+    background-color: #f736b7;
+}
+
+.dragon:hover,
+.dragon:focus {
+    /* background-color: #7036f7; */
+    background-color: #2601cb;
+}
+
+.electric:hover,
+.electric:focus {
+    background-color: #f7ee36;
+    color: black;
+}
+
+.dark:hover,
+.dark:focus {
+    background-color: #525252;
+}
+
+.fighting:hover,
+.fighting:focus {
+    /* background-color: #9c5151; */
+    background-color: #c12d2d;
+}
+
+.fairy:hover,
+.fairy:focus {
+    background-color: #f786df;
+}
+
+.rock:hover,
+.rock:focus {
+    /* background-color: #8a6c15; */
+    background-color: #59450d;
+}
+
+.poison:hover,
+.poison:focus {
+    background-color: #a859d9;
+}
+
+.steel:hover,
+.steel:focus {
+    background-color: #adadad;
+}
+
+.ground:hover,
+.ground:focus {
+    background-color: #d1995a;
+}
+
+.normal:hover,
+.normal:focus {
+    background-color: #ada489;
+}
+
+.flying:hover,
+.flying:focus {
+    background-color: #a975e0;
+}
+
+
+
