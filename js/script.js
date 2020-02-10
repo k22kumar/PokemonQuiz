@@ -359,7 +359,7 @@ pokeTypeApp.showMatchUp = function (typeIndex, matchUp) {
 pokeTypeApp.askQuestion = function () {
     if (pokeTypeApp.quizMode == true) {
 
-        let questionType = Math.floor((Math.random() * 2));
+        let questionType = Math.floor((Math.random() * 3.9));
         switch (questionType) {
             case 0:
                 pokeTypeApp.askSuperQuestion();
@@ -396,7 +396,7 @@ pokeTypeApp.askSuperQuestion = function () {
 pokeTypeApp.askNotEffectiveQuestion = function () {
     //only run if quiz mode is on some reason without this if it still runs
     if (pokeTypeApp.quizMode == true) {
-        let typeIndex = Math.floor(Math.random() * 17);
+        let typeIndex = Math.floor(Math.random() * 17.9);
 
         let type = pokeTypeApp.convertIndexToJtype(typeIndex, "str");
         let typeArray = pokeTypeApp.typeChart[typeIndex];
@@ -416,7 +416,7 @@ pokeTypeApp.askImmunityQuestion = function () {
     //only run if quiz mode is on some reason without this if it still runs
     if (pokeTypeApp.quizMode == true) {
         //There are onl 8 types with immunities against other types (normal, ground, flying, ghost, dark, steel, and fairy)
-        let immunityRng = Math.floor(Math.random() * 6);
+        let immunityRng = Math.floor(Math.random() * 6.9);
         let typeIndex = 0;
 
         switch (immunityRng) {
@@ -494,7 +494,7 @@ pokeTypeApp.giveFeedBack = function (theTypeIndex) {
 }
 
 pokeTypeApp.positiveFeedBack = function () { //function that gives a random positive response
-    let rng = Math.floor(Math.random() * 2);
+    let rng = Math.floor(Math.random() * 2.9);
     positiveLine = "";
     switch (rng) {
         case 0:
@@ -511,7 +511,7 @@ pokeTypeApp.positiveFeedBack = function () { //function that gives a random posi
 }
 
 pokeTypeApp.constructiveFeedBack = function () { //function that gives a random positive response
-    let rng = Math.floor(Math.random() * 2);
+    let rng = Math.floor(Math.random() * 2.9);
     constructiveLine = "";
     switch (rng) {
         case 0:
@@ -552,7 +552,7 @@ pokeTypeApp.gradeTrainer = function () {
 pokeTypeApp.changePokemon = function (typeIndex) {
     let type = typeIndex;
     let typeString = pokeTypeApp.convertIndexToJtype(type, "str");
-    let rng = Math.floor(Math.random() * 3);
+    let rng = Math.floor(Math.random() * 3.9);
     let source = "assets/" + typeString + "/" + rng + ".png";
     pokeTypeApp.$pokemon.attr('src', source);
 }
