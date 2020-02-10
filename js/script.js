@@ -552,7 +552,7 @@ pokeTypeApp.gradeTrainer = function () {
 pokeTypeApp.changePokemon = function (typeIndex) {
     let type = typeIndex;
     let typeString = pokeTypeApp.convertIndexToJtype(type, "str");
-    let rng = Math.floor(Math.random() * 3);
+    let rng = Math.round(Math.random() * 3);
     let source = "assets/" + typeString + "/" + rng + ".png";
     pokeTypeApp.$pokemon.attr('src', source);
 }
