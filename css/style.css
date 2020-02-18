@@ -256,6 +256,7 @@ section {
     .quiz {
         width: 90px;
         height: 60px;
+        background-color: blue;
     }
 
     .response {
