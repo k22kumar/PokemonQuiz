@@ -109,15 +109,15 @@ section {
 }
 
 .superEffective {
-    box-shadow: 0px 0px 20px 10px rgba(60,207,44,1);
+    box-shadow: 0px 0px 20px 10px rgb(60,207,44);
 }
 
 .notEffective {
-    box-shadow: 0px 0px 20px 10px rgba(199, 10, 10);
+    box-shadow: 0px 0px 20px 10px rgb(199, 10, 10);
 }
 
 .immunity {
-    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0);
+    box-shadow: 0px 0px 20px 10px rgb(0, 0, 0);
 }
 
 .quiz {
@@ -230,5 +230,39 @@ section {
     background-color: #a975e0;
 }
 
+@media (max-width: 900px) {
+    .wrapper {
+        width: 100%;
+    }
+}
 
+@media (max-width: 620px) {
 
+    .professorOak {
+        display: contents; 
+     }
+
+    .button {
+        margin: 12px;
+        padding: 7px 5px;
+        font-size: 1.6rem;
+        width: 100px;
+    }
+
+    .titleimg-container {
+        text-align: center;
+    }
+
+    .quiz {
+        width: 90px;
+        height: 60px;
+    }
+
+    .response {
+        padding: 0 22px;
+    }
+
+    .notEffective {
+        box-shadow: 0px 0px 20px 10px rgba(199, 10, 10);
+    }
+}

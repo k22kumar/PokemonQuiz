@@ -51,7 +51,11 @@ const pokeTypeApp = { //namespace object
     quizMode: false,
     quizCounter: 0,
     score: 0,
-    answerKey: []
+    answerKey: [],
+
+    //keep music if music is on
+    musicIsPlaying: false
+
 };
 
 pokeTypeApp.init = function () { // parse pokeType methods
@@ -67,6 +71,7 @@ pokeTypeApp.init = function () { // parse pokeType methods
     pokeTypeApp.checkAnswer();
     pokeTypeApp.giveFeedBack();
     pokeTypeApp.playMusic();
+
 }
 
 
@@ -79,6 +84,7 @@ pokeTypeApp.chooseType = function () {
         let typeIndex = pokeTypeApp.convertJtypeToIndex($(this));
 
         if ($(this).is('.quiz')) {
+            pokeTypeApp.playMusic();
             pokeTypeApp.reset();
             pokeTypeApp.quizCounter = 0;
             $(this).addClass('disabled');
@@ -498,7 +504,7 @@ pokeTypeApp.giveFeedBack = function (theTypeIndex) {
                     if (i == (pokeTypeApp.answerKey.length - 1)) {
                         correctAnswer += " or " + pokeTypeApp.convertIndexToJtype(pokeTypeApp.answerKey[i], "str");
                     } else {
-                        correctAnswer += " " + pokeTypeApp.convertIndexToJtype(pokeTypeApp.answerKey[i], "str")  ;
+                        correctAnswer += " " + pokeTypeApp.convertIndexToJtype(pokeTypeApp.answerKey[i], "str");
                     }
                 }
             }
@@ -577,7 +583,6 @@ pokeTypeApp.playMusic = function () {
 }
 
 $(document).ready(function () {
-    pokeTypeApp.playMusic();
     pokeTypeApp.init();
 
 });
